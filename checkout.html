@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <img src="logo.png" alt="Goya Logo" class="logo">
+            <div class="icons">
+                <a href="#"><img src="search-svgrepo-com (2) 1.png" alt="Search" class="icon"></a>
+                <a href="#"><img src="cart.png" alt="Cart" class="icon"></a>
+                <button class="login-btn">Login / Sign Up</button>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Customized Products</a></li>
+                <li><a href="#">Readymade Products</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="checkout-container">
+            <div class="left-container">
+                <section class="contact-info">
+                    <h2>Contact</h2>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <div class="input-group">
+                        <input type="checkbox" id="news-offers">
+                        <label for="news-offers">Email me with news and offers</label>
+                    </div>
+                </section>
+                <section class="delivery-info">
+                    <h2>Delivery</h2>
+                    <div class="input-group">
+                        <input type="radio" id="home" name="delivery" checked>
+                        <label for="home">Home (Delivery fee $2)</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="radio" id="different-address" name="delivery">
+                        <label for="different-address">Use a different delivery address</label>
+                    </div>
+                    <form id="delivery-form">
+                        <input type="text" id="country" placeholder="Country" required>
+                        <input type="text" id="first-name" placeholder="First Name" required>
+                        <input type="text" id="last-name" placeholder="Last Name" required>
+                        <input type="text" id="address-line1" placeholder="Address Line 1" required>
+                        <input type="text" id="address-line2" placeholder="Address Line 2">
+                        <input type="text" id="mobile-number" placeholder="Mobile number" required pattern="^\d{10}$" title="Please enter a valid 10-digit mobile number">
+                    </form>
+                </section>
+                <section class="payment-info">
+                    <h2>Payment</h2>
+                    <div class="payment-status">
+                        <p>All transactions are secure and encrypted</p>
+                        <p>Razorpay Secure (UPI, Cards, Wallets, NetBanking)</p>
+                        <p>After clicking "Pay now", you will be redirected to Razorpay to complete your purchase securely.</p>
+                    </div>
+                    <div class="billing-address">
+                        <div class="input-group">
+                            <input type="checkbox" id="billing-same">
+                            <label for="billing-same">Billing address same as delivery address</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="checkbox" id="billing-different">
+                            <label for="billing-different">Use a different billing address</label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="payNow()">Pay now</button>
+                </section>
+            </div>
+            <aside class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="item">
+                    <img src="book-image.jpg" alt="Lorem ipsum">
+                    <div>
+                        <p>Lorem ipsum</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+                <div class="total">
+                    <input type="text" class="coupon-code" placeholder="Enter coupon code" id="coupon-code">
+                    <button type="button" onclick="applyCoupon()">Apply</button>
+                    <p>Subtotal: </p>
+                    <p>Shipping: </p>
+                    <p>Total: </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <script src="checkout.js"></script>
+</body>
+</html>
